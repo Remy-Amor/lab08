@@ -1,22 +1,13 @@
 <?php
      session_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
-</head>
-<?php include header.inc; ?>
-<body>
-     <?php 
-          if(isset($_SESSION['user'])) {
-               echo  "Welcome, " .$_SESSION['user'];
-          } else {
-               header('Location: login.php');
-          }
+     if(isset($_SESSION['user'])) {
+          echo  "Welcome, " .$_SESSION['user'];
+     } else {
+          header('Location: login.php');    
+           }
+     echo '<form action="welcome.php" method="post"> <input type="submit" name="logout" value="logout"> </form>';
+     if(isset($_POST['logout'])) {
+          session_destroy();
+          header('Location: login.php');
+     }
      ?>
-</body>
-<?php include footer.inc ?>
-</html>
