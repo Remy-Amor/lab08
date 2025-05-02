@@ -5,11 +5,12 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Login</title>
 </head>
+<?php include header.inc; ?>
 <body>
      <main>
           <form action="process.php" method="post">
                <label for="name">Username:</label>
-               <input type="text" name="name" id="name">
+               <input type="text" name="username" id="username">
                <br>
                <label for="password">Password</label>
                <input type="password" name="password" id="password">
@@ -18,4 +19,6 @@
           </form>
      </main>
 </body>
+<?php include footer.inc ?>
+
 </html>
